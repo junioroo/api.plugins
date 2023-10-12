@@ -10,8 +10,9 @@ export default class ContractsService {
   deploy = async (plugin: Plugin) => {
     const accounts = await web3.eth.getAccounts();
     const from = accounts[0];
+    const tokenId = 1;
 
-    return this.compileAndDeployContract(plugin.contract, 'Contract', from);
+    return this.compileAndDeployContract(plugin.contract, from, plugin.name, [from, tokenId]);
   }
 
   async compileAndDeployContract(contractContent: string, from: string, contractName: string, args: any [] = []) {
