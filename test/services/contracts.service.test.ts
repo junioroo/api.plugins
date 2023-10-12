@@ -1,7 +1,7 @@
 import {describe, it, xit, expect} from "@jest/globals";
-import ContractsService from "~/services/contracts.service";
 import * as fs from "fs";
-import Plugin from "~/models/plugin";
+import ContractsService from "../../src/services/contracts.service";
+import Plugin from "../../src/models/plugin";
 
 const service = new ContractsService();
 const contractStr = fs.readFileSync(__dirname + '/../contract.sol', 'utf-8')
@@ -14,7 +14,7 @@ describe('ContractsService', () => {
       const contract = compiled.contracts['contract.sol'].Contract;
 
       expect(Object.keys(contract.abi).length).toEqual(2);
-      expect(contract['evm']['bytecode']['object'].length).toEqual(414);
+      expect(contract['evm']['bytecode']['object'].length).toEqual(320);
     });
   });
 

@@ -1,6 +1,4 @@
 import {Column, DataType, Model, Table,} from "sequelize-typescript";
-import Sequelize from "sequelize";
-import sequelize from "../db";
 
 export enum STATUS {
   CREATED = 'created',

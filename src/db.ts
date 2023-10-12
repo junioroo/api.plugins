@@ -1,5 +1,4 @@
 import {Sequelize, DataType} from 'sequelize-typescript';
-
 import Plugin from "./models/plugin";
 
 const sequelize = new Sequelize({
