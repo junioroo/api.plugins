@@ -1,0 +1,35 @@
+{
+  "compilerOptions": {
+    "outDir": "./dist/",
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "types": [
+      "node"
+    ],
+    "isolatedModules": true,
+    "esModuleInterop": true,
+    "downlevelIteration": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "lib": [
+      "es2018",
+      "esnext.asynciterable"
+    ],
+    "baseUrl": ".",
+    "paths": { // add to jest also
+      "~/*": [
+        "src/*"
+      ],
+      "got": [
+        "./node_modules/got/dist/source"
+      ]
+    }
+  },
+  "include": [
+    "src/**/*.ts",
+    "/**/*.ts"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "name": "api.plugins",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.ts",
+  "scripts": {
+    "start": "ts-node ./src/main.ts",
+    "sample": "ts-node ./scripts/sample.ts",
+    "test": "jest -i"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@openzeppelin/contracts": "^5.0.0",
+    "@prisma/client": "^5.1.1",
+    "@truffle/hdwallet-provider": "^2.1.15",
+    "class-validator": "^0.14.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "dotenv-cli": "^7.3.0",
+    "express": "^5.0.0-beta.1",
+    "got": "^11.8.6",
+    "reflect-metadata": "^0.1.13",
+    "sequelize": "^6.33.0",
+    "sequelize-typescript": "^2.1.5",
+    "solc": "^0.8.19",
+    "sqlite3": "^5.1.6",
+    "ts-node": "^10.9.1",
+    "tsconfig-paths": "^4.2.0",
+    "typescript": "^5.1.6",
+    "web3": "^4.1.2"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.13",
+    "@types/node": "^20.8.3",
+    "@types/validator": "^13.11.2",
+    "jest": "^29.6.2",
+    "jest-mock-extended": "^3.0.5",
+    "ts-jest": "^29.1.1",
+    "tslib": "^2.5.3"
+  }
+}
