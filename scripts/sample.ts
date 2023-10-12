@@ -101,7 +101,7 @@ const deploy = async () => {
     return;
   }
   await attachPlugin(nftContract, treeDonationTransaction, nftCreator, tokenId);
-  service.listenTransferEvents(treeDonationTransaction.contractAddress, pluginAbi);
+  service.listenTransferEvents(treeDonationTransaction.contractAddress, pluginAbi, {onTransfer: 'console.log("onTransfer Transfered called")'});
 
   await mintNFT(nftContract, nftCreator, nftMinter, tokenId);
   await transferNFT(nftContract, nftMinter, nftReceiver, tokenId);

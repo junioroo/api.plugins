@@ -87,7 +87,7 @@ export default class ContractsService {
     return {contents: source};
   }
 
-  listenTransferEvents = (nftContractAddress: string, pluginAbi: any) => {
+  listenTransferEvents = (nftContractAddress: string, pluginAbi: any, metadata: any) => {
     const contract = new wssweb3.eth.Contract(pluginAbi, nftContractAddress);
     const event = contract.events['NFTTransferred'];
 
@@ -99,7 +99,11 @@ export default class ContractsService {
     // @ts-ignore
     event().on('data', (event: any) => {
       console.log('event > Transfer data', event);
-      // TODO: execute custom plugin code
+
+      if ('onTransfer' in metadata) {
+        // TODO: fix security issues
+        eval(metadata.onTransfer);
+      }
     });
   }
   listDeployedPlugins = async (): Promise<Plugin[]> => {
@@ -117,7 +121,7 @@ export default class ContractsService {
     console.log(`Starting ${plugins.length} plugins listeners..`);
 
     for (const plugin of plugins) {
-      this.listenTransferEvents(plugin.contractAddress, plugin.contractAbi);
+      this.listenTransferEvents(plugin.contractAddress, plugin.contractAbi, plugin.metadata);
     }
   }
 }

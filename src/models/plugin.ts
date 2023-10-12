@@ -26,7 +26,7 @@ class Plugin extends Model {
   @Column(DataType.JSON)
   metadata: string
 
-  @Column(DataType.JSON)
+  @Column(DataType.STRING)
   contract: string
 
   @Column
